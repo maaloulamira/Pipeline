@@ -46,7 +46,7 @@ pipeline {
          {
              timeout(time: 1, unit: 'HOURS') 
              {
-                waitForQualityGate abortPipeline: true, credentialsId: 'SONARQUBE-CRED'
+                waitForQualityGate abortPipeline: true, credentialsId: 'jenkins-sonar'
             }
          }
      }
@@ -67,6 +67,6 @@ stage('Nexus Upload')
                          type: 'war'
                      ]
                 ], 
-                         credentialsId: 'Nexus-Cred', 
+                         credentialsId: 'jenkins-nexus', 
                          groupId: "${readPom.groupId}", 
-                         nexusUrl: '192.168.144.129:8081', 
+                         nexusUrl: '192.168.0.9:8081', 
