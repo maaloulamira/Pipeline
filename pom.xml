@@ -74,13 +74,13 @@
   <distributionManagement>
         <repository>
           <id>nexus</id>
-          <name>Nexus Repository</name>
-          <url>http://192.168.0.9:8081/repository/release/</url>
+          <name>NexusRepository</name>
+          <url>http://192.168.0.9:8081/repository/SnapshotNexusRepository/</url>
         </repository>
         <snapshotRepository>
            <id>nexus</id>
-           <name>KC Tech Snapshot Nexus Repository </name>
-           <url>http://192.168.0.9:8081/repository/snapshot/</url>
+           <name> SnapshotNexusRepository </name>
+           <url>http://192.168.0.9:8081/repository/NexusRepositorys/</url>
         </snapshotRepository>
    </distributionManagement>
   <profiles>
@@ -90,8 +90,8 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <sonar.host.url>http://:9000/</sonar.host.url>
-			        	<sonar-maven-plugin.version>3.3.0.603</sonar-maven-plugin.version>
+                <sonar.host.url>http://192.168.0.9:9000/</sonar.host.url>
+                <sonar-maven-plugin.version>3.3.0.603</sonar-maven-plugin.version>
             </properties>
             <build>
               <plugins>
