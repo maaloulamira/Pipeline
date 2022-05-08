@@ -2,7 +2,7 @@ pipeline {
      agent any
       tools {
         // Install the Maven version configured as "M3" and add it to the path.
-        maven "MAVEN_3.8.4"
+        maven "MAVEN_3.8.5"
     }
     stages{
        stage('GetCode'){
@@ -13,7 +13,7 @@ pipeline {
        stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : 'MAVEN_3.8.4') {
+                withMaven(maven : 'MAVEN_3.8.5') {
                     sh 'mvn clean compile'
                 }
             }
@@ -21,7 +21,7 @@ pipeline {
          stage ('Testing Stage') {
 
             steps {
-                withMaven(maven : 'MAVEN_3.8.4') {
+                withMaven(maven : 'MAVEN_3.8.5') {
                     sh 'mvn test'
                 }
             }
