@@ -6,7 +6,7 @@ pipeline {
     stages{
        stage('GetCode'){
             steps{
-                git 'https://github.com/eyaboubaker/Pipline.git'
+                git 'https://github.com/eyaboubaker/Pipeline.git'
             }
          }        
        stage ('Compile Stage') {
