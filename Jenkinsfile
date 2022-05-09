@@ -53,22 +53,24 @@ stage('Nexus Upload')
      {
          steps
          {
-             script
-             {
-                 def readPom = readMavenPom file: 'pom.xml'
-                 def nexusrepo = readPom.version.endsWith("SNAPSHOT") ? "SnapshotNexusRepository" : "NexusRepository"
+            
                  nexusArtifactUploader artifacts: 
                  [
                      [
-                         artifactId: "${readPom.artifactId}",
+                         artifactId: "Pipeline",
                          classifier: '', 
-                         file: "target/${readPom.artifactId}-${readPom.version}.war", 
+                         file: "target/Pipeline-8.20.0.war", 
                          type: 'war'
                      ]
                 ], 
                          credentialsId: 'jenkins-nexus', 
-                         groupId: "${readPom.groupId}", 
+                         groupId: 'in.javahome', 
                          nexusUrl: '192.168.0.9:8081', 
+                         nexusVersion: 'nexus3',
+                         protocol: 'http' ,
+                         repository: 'NexusRepository' ,
+                         version: '8.2.0'
+              
                       }
          }
      }
