@@ -6,7 +6,7 @@ pipeline {
     stages{
        stage('GetCode'){
             steps{
-                git 'https://github.com/eyaboubaker/Pipeline.git'
+                git url 'https://github.com/eyaboubaker/Pipeline.git'
             }
          }        
        stage ('Compile Stage') {
@@ -30,15 +30,12 @@ pipeline {
                 sh 'mvn clean package'
             }
          }
-        stage('Execute Sonarqube Report')
-     {
-            steps
-         {
-              withSonarQubeEnv('sonar') 
-             {
-                sh "mvn sonar:sonar"
-             }  
-         }
+         stage ('Sonarqube analysis'){
+              steps {
+                   withSonarQubeEnv('sonar') {
+                        sh "mvn sonar:sonar"
+                   }
+              }
          stage('Quality Gate Check')
      {
          steps
