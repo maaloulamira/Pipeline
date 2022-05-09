@@ -1,8 +1,7 @@
 pipeline { 
      agent any
       tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-        maven "MAVEN_3.8.5"
+        maven "Maven 3.8.5"
     }
     stages{
        stage('GetCode'){
@@ -13,7 +12,7 @@ pipeline {
        stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : 'MAVEN_3.8.5') {
+                withMaven(maven : 'Maven 3.8.5') {
                     sh 'mvn clean compile'
                 }
             }
@@ -21,7 +20,7 @@ pipeline {
          stage ('Testing Stage') {
 
             steps {
-                withMaven(maven : 'MAVEN_3.8.5') {
+                withMaven(maven : 'Maven 3.8.5') {
                     sh 'mvn test'
                 }
             }
@@ -35,7 +34,7 @@ pipeline {
      {
             steps
          {
-              withSonarQubeEnv('Sonarqube-Server') 
+              withSonarQubeEnv('sonar') 
              {
                 sh "mvn sonar:sonar"
              }  
@@ -57,7 +56,7 @@ stage('Nexus Upload')
              script
              {
                  def readPom = readMavenPom file: 'pom.xml'
-                 def nexusrepo = readPom.version.endsWith("SNAPSHOT") ? "wallmart-snapshot" : "wallmart-release"
+                 def nexusrepo = readPom.version.endsWith("SNAPSHOT") ? "SnapshotNexusRepository" : "NexusRepository"
                  nexusArtifactUploader artifacts: 
                  [
                      [
