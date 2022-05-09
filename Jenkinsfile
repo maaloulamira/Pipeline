@@ -72,5 +72,7 @@ stage('Nexus Upload')
          }
      }
     }
+}
+}
 
 
