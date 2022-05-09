@@ -69,3 +69,6 @@ stage('Nexus Upload')
                          credentialsId: 'jenkins-nexus', 
                          groupId: "${readPom.groupId}", 
                          nexusUrl: '192.168.0.9:8081', 
+                      }
+         }
+     }
