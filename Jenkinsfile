@@ -11,7 +11,8 @@ pipeline {
                 git "https://github.com/eyaboubaker/Pipeline.git "
                
             }
-         }        
+         }
+    }
        stage ('Compile Stage') {
 
             steps {
@@ -39,19 +40,20 @@ pipeline {
                         sh "mvn sonar:sonar"
                    }
               }
-         stage('Quality Gate Check')
-     {
-         steps
+         }
+         stage('Quality Gate Check'){
+     
+            steps
          {
             
                 waitForQualityGate abortPipeline: true, credentialsId: 'jenkins-sonar'
             
          }
      }
-stage('Nexus Upload')
-     {
-         steps
-         {
+         stage('Nexus Upload'){
+          
+            steps
+             {
             
                  nexusArtifactUploader artifacts: 
                  [
