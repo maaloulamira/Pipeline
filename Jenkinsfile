@@ -2,11 +2,14 @@ pipeline {
      agent any
       tools {
         maven "Maven 3.8.5"
+        groovy "groovy-3.0.8"
+        jdk "Java 8"
     }
     stages{
        stage('GetCode'){
-            steps{
-                git url 'https://github.com/eyaboubaker/Pipeline.git'
+            steps {
+                git "https://github.com/eyaboubaker/Pipeline.git "
+               
             }
          }        
        stage ('Compile Stage') {
@@ -40,10 +43,9 @@ pipeline {
      {
          steps
          {
-             timeout(time: 1, unit: 'HOURS') 
-             {
+            
                 waitForQualityGate abortPipeline: true, credentialsId: 'jenkins-sonar'
-            }
+            
          }
      }
 stage('Nexus Upload')
