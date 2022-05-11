@@ -50,7 +50,7 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello My name is Waddah</h1>
+        <h1>Hello My name is eya</h1>
         <p>This is for test my devops chaine </p>
         <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
     </div>
@@ -86,7 +86,7 @@
     <hr>
 
     <footer>
-        <p>&copy; waddah souei 2022</p>
+        <p>&copy; eya boubaker 2022</p>
     </footer>
 </div> <!-- /container -->
 
