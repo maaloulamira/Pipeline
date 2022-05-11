@@ -1,18 +1,17 @@
-pipeline { 
-     agent any
-      tools {
+pipeline {
+agent any
+tools {
         maven "Maven 3.8.5"
         groovy "groovy-3.0.8"
         jdk "Java 8"
-    }
-    stages{
-       stage('GetCode'){
-            steps {
-                git "https://github.com/eyaboubaker/Pipeline.git "
-               
-            }
-         }
-    }
+}
+stages {
+ stage("Code Checkout from github") {
+  steps {
+   git branch: 'main',
+    url: 'https://github.com/eyaboubaker/Pipeline.git'
+  }
+ }
        stage ('Compile Stage') {
 
             steps {
