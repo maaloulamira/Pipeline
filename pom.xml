@@ -3,26 +3,21 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	
-       <groupId>in.javahome</groupId>
-       <artifactId>WebApp</artifactId>
+       <groupId>com.mt</groupId>
+       <artifactId>java-web-app</artifactId>
        <packaging>war</packaging>
        <version>1.0</version>
-       <name>WebApp Maven Webapp</name>
+	
+       <name>Maven Web Application</name>
        <url>http://maven.apache.org</url>
 	
        <properties>
-	     <java.version>1.8</java.version>
-	     <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
-	     <maven.compiler.target>1.8</maven.compiler.target>
-	     <maven.compiler.source>1.8</maven.compiler.source>
-	     <spring.version>4.1.4.RELEASE</spring.version>
-	     <junit.version>4.11</junit.version>
-	     <log4j.version>1.2.17</log4j.version>
-	     <sonar.host.url>http://192.168.0.9:9000/</sonar.host.url>
-             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-             <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-             <sonar.groovy.binaries>target/classes</sonar.groovy.binaries>
-    
+	     
+		<spring.version>5.0.7.RELEASE</spring.version>
+		<junit.version>4.12</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
    </properties> 
  
  
@@ -116,17 +111,7 @@
                 <sonar.host.url>http://192.168.0.9:9000/</sonar.host.url>
                 <sonar-maven-plugin.version>3.3.0.603</sonar-maven-plugin.version>
             </properties>
-            <build>
-              <plugins>
-                <plugin>
-                    <groupId>org.sonarsource.scanner.maven</groupId>
-                    <artifactId>sonar-maven-plugin</artifactId>
-                    <version>${sonar-maven-plugin.version}</version>
-                </plugin>
-              </plugins>
-            </build>
-        </profile>
-  </profiles>
+            
   <build>
 		<plugins>
 			<plugin>
