@@ -65,7 +65,7 @@ stages {
                 ], 
                          credentialsId: 'jenkins-nexus', 
                          groupId: 'in.javahome', 
-                         nexusUrl: '127.0.0.1:8081', 
+                         nexusUrl: '192.168.100.180:8081', 
                          nexusVersion: 'nexus3',
                          protocol: 'http' ,
                          repository: 'NexusRepository' ,
