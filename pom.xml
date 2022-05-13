@@ -116,7 +116,7 @@
                 <sonar-maven-plugin.version>3.3.0.603</sonar-maven-plugin.version>
             </properties>
             
-  <build>
+            <build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -129,6 +129,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
-  </build>
+	    </build>
+	</profile>
+    </profiles>
 </project>
