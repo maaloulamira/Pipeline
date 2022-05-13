@@ -35,7 +35,7 @@ stages {
          }
          stage ('Sonarqube analysis'){
               steps {
-                   withSonarQubeEnv('sonar') {
+                   withSonarQubeEnv('SonarQube') {
                         sh "mvn sonar:sonar"
                    }
               }
