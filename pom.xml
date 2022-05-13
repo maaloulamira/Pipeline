@@ -94,10 +94,12 @@
   <distributionManagement>
         <repository>
            <id>nexus</id>
-          <url>http://127.0.0.1:8081/repository/NexusRepository/</url>
+	   <name>Release nexus Repository </name>
+           <url>http://127.0.0.1:8081/repository/NexusRepository/</url>
         </repository>
         <snapshotRepository>
            <id>nexus</id>
+           <name>Snapshot nexus Repository </name>
            <url>http://127.0.0.1:8081/repository/SnapshotNexusRepositorys/</url>
         </snapshotRepository>
    </distributionManagement>
