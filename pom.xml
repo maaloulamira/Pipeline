@@ -94,9 +94,6 @@
 		    <version>1.2.3</version>
 	        </dependenc>
 	</dependencies>
- 
-	
-
   <distributionManagement>
         <repository>
            <id>nexus</id>
