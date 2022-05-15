@@ -16,9 +16,11 @@
 		<spring.version>5.0.7.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
+	        <sonar.host.url>http://192.168.43.148:9000 </sonar.host.url>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	        <sonar.groovy.binaries>target</sonar.groovy.binaries>
+	       
        </properties> 
        <dependencies>
 
@@ -84,7 +86,7 @@
 		<dependency>
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
-                    <version>3.0.2</version>
+                    <version>3.6.0.1398</version>
                 </dependency>
 		
 		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
